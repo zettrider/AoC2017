@@ -17,12 +17,8 @@ def getv2Checksum(sheetIn):
     
     for item in puzzleInput:
         for x, y in [[int(a), int(b)] for a in item.split() for b in item.split()]:
-            if x == y:
-                continue
-            elif x % y == 0:
+            if x != y and x % y == 0:
                 checksumCounter += (x // y)
-            else:
-                continue
 
     return(checksumCounter)
 
